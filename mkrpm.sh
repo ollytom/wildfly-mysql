@@ -2,11 +2,12 @@
 
 set -e
 
-modulepath="opt/wildfly/modules/system/layers/base/com/mysql/jdbc/main
-mkdir -p $modulepath
+
 version="5.1.47"
 module="mysql-connector-java-$version"
 curl -sL https://dev.mysql.com/get/Downloads/Connector-J/$module.tar.gz | gunzip | tar xf /dev/stdin
+modulepath="opt/wildfly/modules/system/layers/base/com/mysql/jdbc/main
+mkdir -p $modulepath
 cp $module/$module.jar $modulepath
 cp module.xml $modulepath
 
