@@ -1,0 +1,26 @@
+mysqlwildfly contains scripts which packages the official mysql
+connector from oracle as a wildfly module.
+
+The scripts download the official mysql-connector jar from the mysql
+website. The jar and the module metadata file, module.xml, are copied
+into a wildfly module directory tree.
+
+mktar.sh archives that tree using tar(1). Install the module by
+extracting the tar in /opt/wildfly/modules/system/layers/base:
+
+	cd /opt/wildfly/modules/system/layers/base
+	tar xvzf wildfly-mysql-5.1.47.tar.gz
+
+mkrpm.sh creates an rpm package using fpm. The rpm can be installed
+ like any other rpm. For example using yum:
+
+	yum install wildfly-mysql-5.1.47.rpm
+
+A special note on fpm. fpm requires ruby. To install fpm, install the fpm
+gem:
+
+	gem install fpm
+
+For more help on installing fpm see the project's documentation.
+
+https://fpm.readthedocs.io/en/latest/installing.html
