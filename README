@@ -12,7 +12,7 @@ extracting the tar in /opt/wildfly/modules/system/layers/base:
 	tar xvzf wildfly-mysql-5.1.47.tar.gz
 
 mkrpm.sh creates an rpm package using fpm. The rpm can be installed
- like any other rpm. For example using yum:
+like any other rpm. For example using yum:
 
 	yum install wildfly-mysql-5.1.47.rpm
 
